@@ -2,6 +2,8 @@
 
 Este repositorio contiene ejercicios y programas desarrollados en C++.
 
+🔧 Lenguaje: C++
+
 ## 📂 Estructura del proyecto
 
 ```
