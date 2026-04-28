@@ -3,22 +3,33 @@
 Este repositorio contiene ejercicios y programas desarrollados en C++.
 
 ## 📂 Estructura del proyecto
+
+```
 Programas-cpp/
 │
 ├── Calculadora/
-│ └── calculadora.cpp
+│   └── calculadora.cpp
 │
 ├── Calculadora_mejorada/
-│ └── calculadora_mejorada.cpp
+│   └── calculadora_mejorada.cpp
+```
 
 ## ▶️ Cómo ejecutar
 
-Compilar:
+### Compilar y ejecutar calculadora básica:
 
 ```bash
-g++ calculadora.cpp -o calculadora
+g++ Calculadora/calculadora.cpp -o calculadora
 ./calculadora
+```
 
-👨‍💻 Autor
+### Compilar y ejecutar calculadora mejorada:
+
+```bash
+g++ Calculadora_mejorada/calculadora_mejorada.cpp -o calculadora_mejorada
+./calculadora_mejorada
+```
+
+## 👨‍💻 Autor
 
 Nikolai
