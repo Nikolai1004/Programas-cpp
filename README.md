@@ -1,10 +1,25 @@
 # Programas en C++
 
-Este repositorio contiene ejercicios y programas desarrollados en C++.
+Este repositorio contiene ejercicios y programas desarrollados en C++, organizados en diferentes carpetas según su funcionalidad y modelo de ejecución.
 
-🔧 Lenguaje: C++
+## Lenguaje
 
-## 📂 Estructura del proyecto
+* C++
+
+## Contenido
+
+* Programas básicos de calculadora
+* Calculadora mejorada
+* Modelos de ejecución en C++:
+
+  * Secuencial
+  * Concurrente
+  * Paralelo
+  * Productor-Consumidor
+  * Maestro-Trabajador
+  * Hilos Independientes
+
+## Estructura del proyecto
 
 ```
 Programas-cpp/
@@ -14,24 +29,20 @@ Programas-cpp/
 │
 ├── Calculadora_mejorada/
 │   └── calculadora_mejorada.cpp
+│
+├── Modelos_ejecucion/
+│   ├── 01_secuencial.cpp
+│   ├── 02_concurrente.cpp
+│   ├── 03_paralelo.cpp
+│   ├── 04_productor_consumidor.cpp
+│   ├── 05_maestro_trabajador.cpp
+│   └── 06_hilos_independientes.cpp
+│
+├── README.md
+└── .gitignore
 ```
 
-## ▶️ Cómo ejecutar
+## Autor
 
-### Compilar y ejecutar calculadora básica:
+* Nikolai Coica
 
-```bash
-g++ Calculadora/calculadora.cpp -o calculadora
-./calculadora
-```
-
-### Compilar y ejecutar calculadora mejorada:
-
-```bash
-g++ Calculadora_mejorada/calculadora_mejorada.cpp -o calculadora_mejorada
-./calculadora_mejorada
-```
-
-## 👨‍💻 Autor
-
-Nikolai
