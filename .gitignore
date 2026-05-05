@@ -1,9 +1,17 @@
-# Ejecutables
+# Ejecutables (Windows y Linux)
 *.exe
+*.out
 
 # Archivos compilados
 *.o
-*.out
+
+# Ejecutables sin extensión (Linux)
+concurrente
+hilos
+maestro
+paralelo
+pc
+secuencial
 
 # Configuración de VS Code
 .vscode/
