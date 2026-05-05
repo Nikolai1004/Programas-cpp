@@ -1,9 +1,27 @@
-# 💻 Programas en C++
+# Modelos de Ejecución en C++
 
-Este repositorio contiene una colección de programas desarrollados en el lenguaje C++ como parte del curso de **Estructuras de Datos y Algoritmos**.
+Esta carpeta contiene ejemplos de diferentes modelos de ejecución utilizando C++ y manejo de hilos.
 
-## 📌 Contenido del repositorio
+## Modelos implementados
 
-El proyecto está organizado en módulos para facilitar su comprensión y evaluación:
+- 01_secuencial.cpp  
+  Ejecución paso a paso sin concurrencia.
 
-### 📁 Estructura del proyecto
+- 02_concurrente.cpp  
+  Uso de hilos que se ejecutan de forma intercalada.
+
+- 03_paralelo.cpp  
+  Ejecución simultánea de múltiples tareas.
+
+- 04_productor_consumidor.cpp  
+  Comunicación entre hilos mediante buffers.
+
+- 05_maestro_trabajador.cpp  
+  Un hilo principal distribuye tareas a varios hilos.
+
+- 06_hilos_independientes.cpp  
+  Hilos que trabajan de manera autónoma sin dependencia.
+
+## Objetivo
+
+Comprender las diferencias entre los modelos de ejecución y su aplicación en programación concurrente.
