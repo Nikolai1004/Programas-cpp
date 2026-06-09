@@ -4,7 +4,6 @@
 using namespace std;
 
 // ==================== CLASE PADRE ====================
-// Contiene SOLO: nombre, apellido y edad (como pide el enunciado)
 class Empleado
 {
   protected:
@@ -13,7 +12,6 @@ class Empleado
     int edad;
 
   public:
-    // Constructor de la clase padre
     Empleado(string _nombre, string _apellido, int _edad)
     {
         nombre = _nombre;
@@ -21,8 +19,15 @@ class Empleado
         edad = _edad;
     }
 
-    // METODO PARA MOSTRAR DATOS (en la clase padre como pide el enunciado)
-    void mostrarDatos()
+    // ------------------------------------------------------------
+    // METODO VIRTUAL
+    // ------------------------------------------------------------
+    // La palabra "virtual" permite que las clases hijas puedan
+    // SOBREESCRIBIR (cambiar el comportamiento) de este metodo.
+    // Sin "virtual", la clase padre no permitiria que la hija
+    // modifique este metodo.
+    // ------------------------------------------------------------
+    virtual void mostrarDatos()
     {
         cout << "Nombre: " << nombre << " " << apellido << endl;
         cout << "Edad: " << edad << " años" << endl;
@@ -30,9 +35,6 @@ class Empleado
 };
 
 // ==================== CLASE HIJA ====================
-// Se llama EmpleadoEmpresa (nombre mas profesional)
-// Aqui van: ocupacion, horas(40) y sueldo
-// Aqui van los metodos: empleado por planta y empleado por hora
 class EmpleadoEmpresa : public Empleado
 {
   private:
@@ -41,17 +43,14 @@ class EmpleadoEmpresa : public Empleado
     double sueldo;
 
   public:
-    // Constructor de la clase hija
     EmpleadoEmpresa(string _nombre, string _apellido, int _edad, string _ocupacion)
         : Empleado(_nombre, _apellido, _edad)
     {
         ocupacion = _ocupacion;
-        horas = 40; // Cantidad de horas siempre 40
+        horas = 40;
         sueldo = 0;
     }
 
-    // METODO PARA EMPLEADO POR HORA (operador)
-    // Calcula el sueldo del operador: 40 horas * 50 soles = 2000 soles
     void empleadoPorHora()
     {
         if (ocupacion == "operador")
@@ -60,9 +59,6 @@ class EmpleadoEmpresa : public Empleado
         }
     }
 
-    // METODO PARA EMPLEADO DE PLANTA (supervisor y gerente)
-    // Supervisor: 40 horas * 80 soles = 3200 soles
-    // Gerente: 40 horas * 100 soles = 4000 soles
     void empleadoDePlanta()
     {
         if (ocupacion == "supervisor")
@@ -75,12 +71,31 @@ class EmpleadoEmpresa : public Empleado
         }
     }
 
-    // Metodo para mostrar todos los datos (incluye los de la clase padre)
-    void mostrarTodo()
+    // ------------------------------------------------------------
+    // SOBREESCRIBIENDO EL METODO DE LA CLASE PADRE (OVERRIDE)
+    // ------------------------------------------------------------
+    // La palabra "override" indica que este metodo ESTA REEMPLAZANDO
+    // al metodo "mostrarDatos()" de la clase padre.
+    //
+    // ¿POR QUE ES NECESARIO?
+    // Porque la clase padre NO puede acceder a los atributos de la hija
+    // (ocupacion, horas, sueldo). Entonces la hija debe "sobrescribir"
+    // el metodo para poder mostrar SUS propios datos.
+    //
+    // ¿QUE SIGNIFICA "override"?
+    // Es una palabra que C++ usa para decir: "Oye, este metodo ya existe
+    // en la clase padre, pero yo lo voy a cambiar (sobrescribir) para
+    // que haga algo diferente".
+    // ------------------------------------------------------------
+    void mostrarDatos() override
     {
-        mostrarDatos(); // Llama al metodo de la clase padre
+        // Llamamos al metodo de la clase padre para mostrar
+        // nombre, apellido y edad (asi no repetimos codigo)
+        Empleado::mostrarDatos();
+
+        // Ahora mostramos los datos que SOLO tiene la clase hija
         cout << "Ocupacion: " << ocupacion << endl;
-        cout << "Horas: " << horas << endl;
+        cout << "Horas laboradas: " << horas << endl;
         cout << "Sueldo: S/. " << sueldo << endl;
         cout << "------------------------" << endl;
     }
@@ -89,31 +104,28 @@ class EmpleadoEmpresa : public Empleado
 // ==================== PROGRAMA PRINCIPAL ====================
 int main()
 {
-    // CREAR UN ARREGLO CON LOS 5 EMPLEADOS
+    // Creamos un arreglo con los 5 empleados
+    // 3 operadores (por hora) y 2 de planta (supervisor y gerente)
     EmpleadoEmpresa empleados[5] = {
-        EmpleadoEmpresa("Carlos", "Mendoza", 23, "operador"), // Por hora
-        EmpleadoEmpresa("Ana", "Gomez", 28, "operador"),      // Por hora
-        EmpleadoEmpresa("Luis", "Torres", 31, "operador"),    // Por hora
-        EmpleadoEmpresa("Sofia", "Castro", 35, "supervisor"), // De planta
-        EmpleadoEmpresa("Javier", "Lopez", 42, "gerente")     // De planta
-    };
+        EmpleadoEmpresa("Carlos", "Mendoza", 23, "operador"), EmpleadoEmpresa("Ana", "Gomez", 28, "operador"),
+        EmpleadoEmpresa("Luis", "Torres", 31, "operador"), EmpleadoEmpresa("Sofia", "Castro", 35, "supervisor"),
+        EmpleadoEmpresa("Javier", "Lopez", 42, "gerente")};
 
-    // CALCULAR SUELDOS SEGUN EL TIPO DE EMPLEADO
-    // Los 3 primeros son por hora (operadores)
+    // Calculamos los sueldos segun el tipo de empleado
     empleados[0].empleadoPorHora();
     empleados[1].empleadoPorHora();
     empleados[2].empleadoPorHora();
-
-    // Los 2 ultimos son de planta (supervisor y gerente)
     empleados[3].empleadoDePlanta();
     empleados[4].empleadoDePlanta();
 
-    // MOSTRAR TODOS LOS EMPLEADOS
+    // Mostramos todos los empleados
+    // NOTA: Aunque SOLO llamamos a "mostrarDatos()", gracias al OVERRIDE
+    // se ejecuta la version de la clase hija, NO la de la clase padre.
     cout << "========== LISTA DE EMPLEADOS ==========" << endl << endl;
 
     for (int i = 0; i < 5; i++)
     {
-        empleados[i].mostrarTodo();
+        empleados[i].mostrarDatos(); // Aqui se usa el metodo con override
     }
 
     return 0;
