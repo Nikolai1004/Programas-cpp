@@ -1,0 +1,10 @@
+Carlos Mendoza 23 2 operador 40
+Ana Gomez 28 5 operador 45
+Luis Torres 31 3 operador 38
+Maria Lopez 26 1 operador 42
+Jose Ramirez 29 4 operador 40
+Sofia Castro 35 8 supervisor 40
+Pedro Navarro 38 10 supervisor 40
+Laura Diaz 33 6 supervisor 40
+Javier Lopez 42 12 gerente 40
+Carmen Ruiz 45 15 gerente 40
