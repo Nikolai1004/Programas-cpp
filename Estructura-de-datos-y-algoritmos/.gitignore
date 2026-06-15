@@ -1,20 +1,26 @@
-# Ejecutables (Windows y Linux)
+# Ejecutables
 *.exe
 *.out
 
-# Archivos compilados
+# Objetos
 *.o
 
-# Ejecutables sin extensión (Linux)
+# Ejecutables Linux
+Gestion
 concurrente
 hilos
 maestro
 paralelo
-pc
 secuencial
 
-# Configuración de VS Code
+# VS Code
 .vscode/
 
-# Archivos temporales
+# Logs
 *.log
+
+
+# Informes
+*.pdf
+*.docx
+Reporte_Empleados*
