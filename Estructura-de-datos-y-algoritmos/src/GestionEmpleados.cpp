@@ -383,7 +383,7 @@ void ordenarYMostrarPorCargo()
 void generarReporteCompleto()
 {
     string fechaHora = obtenerFechaHora();
-    string nombreArchivo = "Reporte_Empleados_" + fechaHora + ".txt";
+    string nombreArchivo = "docs/Reporte_Empleados_" + fechaHora + ".txt";
 
     ofstream archivo(nombreArchivo); // "ofstream" = Output File Stream (para ESCRIBIR archivos)
 
@@ -495,7 +495,7 @@ int main()
     cout << "========================================" << endl;
 
     // Intentar leer el archivo
-    if (!leerEmpleadosDesdeArchivo("Empleados.txt"))
+    if (!leerEmpleadosDesdeArchivo("data/Empleados.txt"))
     {
         cout << "\n⚠️ Crea el archivo 'Empleados.txt' con el formato:" << endl;
         cout << "   nombre apellido edad años cargo horas" << endl;

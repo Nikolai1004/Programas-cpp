@@ -1,17 +1,10 @@
 # Ejecutables
 *.exe
 *.out
-
-# Objetos
 *.o
 
-# Ejecutables Linux
-Gestion
-concurrente
-hilos
-maestro
-paralelo
-secuencial
+# Binarios
+bin/
 
 # VS Code
 .vscode/
@@ -19,8 +12,9 @@ secuencial
 # Logs
 *.log
 
-
-# Informes
+# Documentos temporales
 *.pdf
 *.docx
-Reporte_Empleados*
+
+# Reportes generados automáticamente
+docs/Reporte_Empleados*
