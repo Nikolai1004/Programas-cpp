@@ -1,20 +1,29 @@
+# ===========================
 # Ejecutables
+# ===========================
 *.exe
 *.out
 *.o
 
-# Binarios
+# Ejecutables generados
 bin/
 
-# VS Code
+# ===========================
+# Configuración de VS Code
+# ===========================
 .vscode/
 
-# Logs
+# ===========================
+# Archivos de registro
+# ===========================
 *.log
 
-# Documentos temporales
-*.pdf
-*.docx
-
-# Reportes generados automáticamente
+# ===========================
+# Reportes generados por el programa
+# ===========================
 docs/Reporte_Empleados*
+
+# ===========================
+# Archivos temporales de Office
+# ===========================
+~$*
