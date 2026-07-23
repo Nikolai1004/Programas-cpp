@@ -1,0 +1,31 @@
+# Archivos compilados
+*.exe
+*.out
+*.obj
+*.o
+*.a
+*.so
+*.dll
+
+# Carpeta de compilación
+build/
+bin/
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de backup
+*.bak
+*.tmp
+
+# Archivos de datos (opcional - si no quieres subir datos de ejemplo)
+# data/

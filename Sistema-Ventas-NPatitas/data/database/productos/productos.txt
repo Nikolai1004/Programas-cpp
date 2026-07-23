@@ -1,0 +1,3 @@
+C00001|Ciclosona Inyectable|Fco x 50ml|18|18
+V00001|Vigantol ADE|Fco x 25ml|69|7
+V00002|Vigantol ADE|Fco x 50ml|99|4
